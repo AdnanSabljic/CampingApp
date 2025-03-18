@@ -1,12 +1,20 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
-import recommendedCategories from '@/data/recommend'
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useState } from "react";
+import recommendedCategories from "@/data/recommend";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 interface RecommendButtonsProps {
   onCategorySelect: (id: string) => void;
 }
-const RecommendButtons: React.FC<RecommendButtonsProps> = ({ onCategorySelect }) => {
+const RecommendButtons: React.FC<RecommendButtonsProps> = ({
+  onCategorySelect,
+}) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -24,7 +32,9 @@ const RecommendButtons: React.FC<RecommendButtonsProps> = ({ onCategorySelect })
             key={item.id}
             style={[
               styles.button,
-              (selectedId === item.id || hoveredId === item.id) && { backgroundColor: '#0D7377' },
+              (selectedId === item.id || hoveredId === item.id) && {
+                backgroundColor: "#0D7377",
+              },
             ]}
             onPress={() => handlePress(item.id)}
             onPressIn={() => setHoveredId(item.id)}
@@ -33,13 +43,19 @@ const RecommendButtons: React.FC<RecommendButtonsProps> = ({ onCategorySelect })
             <FontAwesome5
               name={item.icon}
               size={20}
-              color={(selectedId === item.id || hoveredId === item.id) ? 'white' : '#0D7377'}
+              color={
+                selectedId === item.id || hoveredId === item.id
+                  ? "white"
+                  : "#0D7377"
+              }
               style={styles.icon}
             />
             <Text
               style={[
                 styles.buttonText,
-                (selectedId === item.id || hoveredId === item.id) && { color: 'white' }
+                (selectedId === item.id || hoveredId === item.id) && {
+                  color: "white",
+                },
               ]}
             >
               {item.title}
@@ -49,7 +65,7 @@ const RecommendButtons: React.FC<RecommendButtonsProps> = ({ onCategorySelect })
       </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -68,7 +84,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     marginHorizontal: 5,
-
   },
   icon: {
     marginRight: 8,

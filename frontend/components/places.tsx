@@ -1,7 +1,13 @@
-import { FlatList, ListRenderItem, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
-import { placesTypes } from '@/types/placesTypes';
-
+import {
+  FlatList,
+  ListRenderItem,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React from "react";
+import { placesTypes } from "@/types/placesTypes";
 
 type Props = {
   places: placesTypes[];
@@ -45,11 +51,11 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   box: {
-    backgroundColor: '#f8f8f8',
+    backgroundColor: "#f8f8f8",
     borderRadius: 6,
     marginRight: 5,
-    overflow: 'hidden',
-    shadowColor: '#000',
+    overflow: "hidden",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 4,
@@ -58,8 +64,8 @@ const styles = StyleSheet.create({
     height: 150,
   },
   container: {
-    flexDirection: 'row',
-    padding: 6, 
+    flexDirection: "row",
+    padding: 6,
   },
   // Commenting out image style for now
   // image: {
@@ -70,31 +76,31 @@ const styles = StyleSheet.create({
   // },
   textContainer: {
     flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
+    justifyContent: "center",
+    flexDirection: "column",
   },
   name: {
     fontSize: 15,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 2,
   },
   description: {
     fontSize: 12,
-    color: '#555',
+    color: "#555",
     marginBottom: 2,
-    width: '90%',
+    width: "90%",
     lineHeight: 18,
   },
 
   rating: {
     fontSize: 13,
-    color: '#888',
+    color: "#888",
   },
   price: {
     fontSize: 13,
-    color: '#0D7377',
+    color: "#0D7377",
     marginTop: 2,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
